@@ -25,5 +25,5 @@ public class NewMessageEventPayload
     public Format Format { get; set; }
 
     [JsonPropertyName("parts")]
-    public PayloadPart[] Parts { get; set; }
+    public PayloadPart[]? Parts { get; set; }
 }

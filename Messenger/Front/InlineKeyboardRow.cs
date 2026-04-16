@@ -14,12 +14,12 @@ public class InlineKeyboardRow
         return this;
     }
 
-    public InlineKeyboardRow AddCallbackButton<T>(string text, T payload, ButtonStyle style = ButtonStyle.Base)
+    public InlineKeyboardRow AddCallbackButton(string text, string payload, ButtonStyle style = ButtonStyle.Base)
     {
         var btn = new CallbackButton()
         {
             Text = text,
-            CallbackData = JsonSerializer.Serialize(payload),
+            CallbackData = payload,
             Style = style
         };
         _buttons.Add(btn);

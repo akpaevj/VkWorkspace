@@ -66,7 +66,7 @@ class MessengerHttpClient
             parameters.Add("format", JsonSerializer.Serialize(request.Format, _options));
 
         if (request.ParseMode != null)
-            parameters.Add("parseMode", JsonSerializer.Serialize(request.ParseMode, _options));
+            parameters.Add("parseMode", JsonSerializer.Serialize(request.ParseMode, _options).Trim('"'));
 
         return await GetAsync<SendTextResponse>(BuildUri("messages/sendText", parameters), cancellationToken);
     }

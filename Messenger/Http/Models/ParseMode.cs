@@ -10,7 +10,7 @@ public enum ParseMode
 {
     /// <summary>Markdown форматирование</summary>
     [JsonPropertyName("MarkdownV2")]
-    Markdown2,
+    MarkdownV2,
 
     /// <summary>HTML форматирование</summary>
     [JsonPropertyName("HTML")]

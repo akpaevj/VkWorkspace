@@ -13,7 +13,7 @@ using VkWorkspace.Messenger.Http.Models.PayloadParts;
 
 namespace VkWorkspace.Messenger;
 
-public class MessengerClient(string token)
+public class VkMessengerClient(string token)
 {
     private readonly MessengerHttpClient _client = new(token);
 
