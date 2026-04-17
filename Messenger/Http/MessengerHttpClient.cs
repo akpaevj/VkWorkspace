@@ -98,7 +98,7 @@ class MessengerHttpClient
             parameters.Add("format", JsonSerializer.Serialize(request.Format, _options));
 
         if (request.ParseMode != null)
-            parameters.Add("parseMode", JsonSerializer.Serialize(request.ParseMode, _options));
+            parameters.Add("parseMode", JsonSerializer.Serialize(request.ParseMode, _options).Trim('"'));
 
         return await GetAsync<SendFileGetResponse>(BuildUri("messages/sendFile", parameters), cancellationToken);
     }
@@ -129,7 +129,7 @@ class MessengerHttpClient
             parameters.Add("format", JsonSerializer.Serialize(request.Format, _options));
 
         if (request.ParseMode != null)
-            parameters.Add("parseMode", JsonSerializer.Serialize(request.ParseMode, _options));
+            parameters.Add("parseMode", JsonSerializer.Serialize(request.ParseMode, _options).Trim('"'));
 
         return await PostFileAsync<SendFilePostResponse>(BuildUri("messages/sendFile", parameters), request.DataStream, "file", request.FileName ?? "", cancellationToken);
     }
@@ -195,7 +195,7 @@ class MessengerHttpClient
             parameters.Add("format", JsonSerializer.Serialize(request.Format, _options));
 
         if (request.ParseMode != null)
-            parameters.Add("parseMode", JsonSerializer.Serialize(request.ParseMode, _options));
+            parameters.Add("parseMode", JsonSerializer.Serialize(request.ParseMode, _options).Trim('"'));
 
         return await GetAsync<Response>(BuildUri("messages/editText", parameters), cancellationToken);
     }
