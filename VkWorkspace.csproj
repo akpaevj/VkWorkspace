@@ -5,7 +5,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		<Version>0.0.3</Version>
+		<Version>0.0.4</Version>
 		<Authors>Akpaev E.A.</Authors>
 		<Copyright>Akpaev E.A.</Copyright>
 		<PackageProjectUrl>https://github.com/akpaevj/VkWorkspace</PackageProjectUrl>
