@@ -221,7 +221,7 @@ class MessengerHttpClient
         };
 
         if (request.Text != null)
-            parameters.Add("text", Uri.UnescapeDataString(request.Text));
+            parameters.Add("text", request.Text);
 
         if (request.ShowAlert != null)
             parameters.Add("showAlert", request.ShowAlert.ToString()?.ToLower());
