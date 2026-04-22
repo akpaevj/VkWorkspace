@@ -65,6 +65,16 @@ public class VkMessengerClient(string token)
         await _client.EditText(request, cancellationToken);
     }
 
+    public async Task DeleteMessages(
+        string chatId,
+        string[] msgIds,
+        CancellationToken cancellationToken = default)
+    {
+        var request = new DeleteMessagesRequest(chatId, [.. msgIds.Select(int.Parse)]);
+
+        await _client.DeleteMessages(request, cancellationToken);
+    }
+
     public async Task<SendFilePostResponse> SendFile(SendFilePostRequest request, CancellationToken cancellationToken = default)
         => await _client.SendFilePost(request, cancellationToken);
 
